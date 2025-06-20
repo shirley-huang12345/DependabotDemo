@@ -20,6 +20,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Use TEST Key
+        run: echo "The API key is ${{ secrets.TEST }}"
+        env:
+          API_KEY: ${{ secrets.TEST }}
+
       - name: Download Mend Unified Agent JAR
         run: |
           curl -LJO https://unified-agent.s3.amazonaws.com/wss-unified-agent.jar
