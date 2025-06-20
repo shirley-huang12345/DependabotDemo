@@ -1,0 +1,32 @@
+name: Mend Unified Agent Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  mend-scan:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Download Mend Unified Agent JAR
+        run: |
+          curl -LJO https://unified-agent.s3.amazonaws.com/wss-unified-agent.jar
+
+      - name: Run Mend Scan
+        env:
+           WS_USER_KEY: ${{ secrets.WS_USER_KEY }}
+           WS_PRODUCT_TOKEN: ${{ secrets.WS_PRODUCT_TOKEN }}
+        run: |
+          java -jar wss-unified-agent.jar -c unified-agent.config -d .
