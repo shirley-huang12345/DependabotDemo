@@ -21,9 +21,9 @@ jobs:
           java-version: '17'
 
       - name: Use TEST Key
-        run: echo "The API key is ${{ secrets.TEST }}"
+        run: echo "The API key is $TEST_KEY"
         env:
-          API_KEY: ${{ secrets.TEST }}
+          TEST_KEY: ${{ secrets.TEST }}
 
       - name: Download Mend Unified Agent JAR
         run: |
