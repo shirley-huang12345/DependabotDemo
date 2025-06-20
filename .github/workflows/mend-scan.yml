@@ -26,8 +26,8 @@ jobs:
 
       - name: Run Mend Scan
         env:
-           WS_API_KEY: ${{ secrets.WS_API_KEY }}
-           WS_USER_KEY: ${{ secrets.WS_USER_KEY }}
-           WS_PRODUCT_TOKEN: ${{ secrets.WS_PRODUCT_TOKEN }}
+           WS_API_KEY: ${{secrets.WS_API_KEY}}
+           WS_USER_KEY: ${{secrets.WS_USER_KEY}}
+           WS_PRODUCT_TOKEN: ${{secrets.WS_PRODUCT_TOKEN}}
         run: |
           java -jar wss-unified-agent.jar -c unified-agent.config -d .
