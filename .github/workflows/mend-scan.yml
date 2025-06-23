@@ -29,12 +29,14 @@ jobs:
            WS_API_KEY: ${{secrets.WS_API_KEY}}
            WS_USER_KEY: ${{secrets.WS_USER_KEY}}
            WS_PRODUCT_TOKEN: ${{secrets.WS_PRODUCT_TOKEN}}
+           WS_PRODUCT_NAME: "Phone_SYS"
+           WS_PROJEC_TNAME : "DependabotDemo"
         run: |
           java -jar wss-unified-agent.jar \
                -apiKey $WS_API_KEY \
                -userKey $WS_USER_KEY \
                -productToken $WS_PRODUCT_TOKEN \
-               -productName Phone_SYS \
-               -projectName DependabotDemo \
+               -productName $WS_PRODUCT_NAME \
+               -projectName $WS_PROJEC_TNAME \
                -projectVersion 1.0 \
                -d .
