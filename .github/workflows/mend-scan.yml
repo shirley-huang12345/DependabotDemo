@@ -36,7 +36,4 @@ jobs:
                -apiKey $WS_API_KEY \
                -userKey $WS_USER_KEY \
                -productToken $WS_PRODUCT_TOKEN \
-               -productName $WS_PRODUCT_NAME \
-               -projectName $WS_PROJEC_TNAME \
-               -projectVersion 1.0 \
                -d .
