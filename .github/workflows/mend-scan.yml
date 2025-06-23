@@ -32,8 +32,4 @@ jobs:
            WS_PRODUCT_NAME: "Phone_SYS"
            WS_PROJEC_TNAME : "DependabotDemo"
         run: |
-          java -jar wss-unified-agent.jar \
-               -apiKey $WS_API_KEY \
-               -userKey $WS_USER_KEY \
-               -productToken $WS_PRODUCT_TOKEN \
-               -d .
+          java -jar wss-unified-agent.jar -c unified-agent.config -d .
