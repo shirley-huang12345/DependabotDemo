@@ -30,4 +30,12 @@ jobs:
            WS_USER_KEY: ${{secrets.WS_USER_KEY}}
            WS_PRODUCT_TOKEN: ${{secrets.WS_PRODUCT_TOKEN}}
         run: |
-          java -jar wss-unified-agent.jar -c unified-agent.config -d .
+          java -jar wss-unified-agent.jar \
+               -apiKey $WS_API_KEY \
+               -userKey $WS_USER_KEY \
+               -productToken $WS_PRODUCT_TOKEN \
+               -wss.url https://saas.whitesourcesoftware.com/agent \
+               -productName Phone_SYS \
+               -projectName DependabotDemo \
+               -projectVersion 1.0 \
+               -d .
